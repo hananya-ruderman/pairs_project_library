@@ -6,5 +6,5 @@ class Books:
         self.is_available = True
         
     def __str__(self):
-        print(f"The book: {self.title}, from {self.author}, is_available: {self.is_available}")
+        print(f"The book: {self.title}, from {self.author}, {self.is_available} is_available")
         
