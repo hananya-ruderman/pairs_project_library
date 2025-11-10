@@ -27,9 +27,13 @@ git push                    # Next pushes
     git checkout <name>     # Switch branch (older syntax)
     git switch <name>       # Better way for switching
     git switch -c <name>    # Create + switch
+    
+    git branch -a           #showes list of all branches
 
-    git pull               # Fetch + merge from remote
-    git fetch              # Fetch only (no merge)
+    git pull                # Fetch + merge from remote
+    git pull origin main
+    git fetch               # Fetch only (no merge)
+    git merge
 
     
     To see the remote Git URL of the current repository, use:
@@ -99,4 +103,5 @@ except MemoryError as e:
     print(f"MemoryError: {e}")
 except OverflowError as e:
     print(f"OverflowError: {e}")
+
 
