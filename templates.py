@@ -27,6 +27,8 @@ git push                    # Next pushes
     git checkout <name>     # Switch branch (older syntax)
     git switch <name>       # Better way for switching
     git switch -c <name>    # Create + switch
+    
+    git branch -a           #showes list of all branches
 
     git pull                # Fetch + merge from remote
     git pull origin main
