@@ -6,7 +6,10 @@ class Book():
         self.is_available = True
         
     def __str__(self):
-        return f"The book: {self.title}, from {self.author},ISBN :{self.ISBN} {self.is_available} is_available"
+        return f"The book: {self.title} from {self.author} ISBN :{self.ISBN} available: {self.is_available}"
+        
+    def __repr__(self):
+        return f"The book: {self.title} from {self.author} ISBN :{self.ISBN} available: {self.is_available}"
         
 
         
