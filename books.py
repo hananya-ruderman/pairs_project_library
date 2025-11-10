@@ -23,13 +23,13 @@ class Library:
             print(book)
         
         
-        
-library = Library()
+if __name__=="__main__":
+    library = Library()
 
-names =[["brachot","rav"],["gitin","raba"]]
-for input in names:
-    library.add_book(input[0],input[1])
+    names =[["brachot","rav"],["gitin","raba"]]
+    for input in names:
+        library.add_book(input[0],input[1])
 
 
-print("============= Books ==============")
-library.print_lib()
+    print("============= Books ==============")
+    library.print_lib()
