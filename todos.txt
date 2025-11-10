@@ -1,13 +1,13 @@
 ✅ Book Class
 ⏹️ User Class 
-    - test if borrow books working
-    - add str
+    ✔️ test if borrow books working
+    ✔️ add str
 ⏹️ Library Class
     ✔️ add_book(book)
-    - add_user(user)
-    - borrow_book(user_id, book_isbn)
-    - return_book(user_id, book_isbn)
-    - list_available_books()
+    ✔️ add_user(user)
+    ✔️ borrow_book(user_id, book_isbn)
+    ✔️ return_book(user_id, book_isbn)
+    ✔️ list_available_books()
     - search_book(title or author)
     - Show all available books.
     - Search for a book by title or author.
