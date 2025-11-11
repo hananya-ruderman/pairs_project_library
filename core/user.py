@@ -7,7 +7,7 @@ class User:
         self.borrowed_books = []
 
 
-    def barrow_a_book(self, book):
+    def borrow_a_book(self, book):
         if len (self.borrowed_books) < 3:
             self.borrowed_books.append(book)
 
