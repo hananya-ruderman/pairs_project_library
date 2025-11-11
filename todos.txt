@@ -1,7 +1,5 @@
 ✅ Book Class
-⏹️ User Class 
-    ✔️ test if borrow books working
-    ✔️ add str
+✅ User Class 
 ⏹️ Library Class
     ✔️ add_book(book)
     ✔️ add_user(user)
@@ -10,7 +8,6 @@
     ✔️ list_available_books()
     - search_book(title or author)
     - Show all available books.
-    - Search for a book by title or author.
-
+    
 ⏹️ Manager Class
     one method to run the program

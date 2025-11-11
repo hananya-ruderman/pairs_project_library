@@ -10,5 +10,4 @@ class Book():
     def __repr__(self):
         return f"The book: {self.title} from {self.author} ISBN :{self.ISBN} available: {self.is_available}"
         
-
-        
+    

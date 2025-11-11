@@ -1,6 +1,6 @@
 
-from core.books import Book
-from core.user import User
+from books import Book
+from user import User
 
 class Library:
     def __init__(self):
@@ -8,13 +8,14 @@ class Library:
         self.list_of_users = []
         
     def add_book(self, book: Book):
+        book = tuple(book,)
         self.list_of_books.append(book)
         
     def add_user(self, user: User):
         self.list_of_users.append(user)
 
     def borrow_book(self, book: Book, user: User):
-        if book in self.list_of_books:
+        if self.search_book(book):
             if book.is_available:
                 if user in self.list_of_users:
                     book.is_available = False
@@ -36,19 +37,6 @@ class Library:
         print("thank you for returning")
 
 
-               
-                    
-                    
-                
-
-
-    # def search_in_list(self, item, the_list):
-    #     if item in the_list:
-    #         return item
-    #     else:
-    #         print("not in list")
-    #         return
-                
     def list_available_books(self):
         list_available_books = []
         for book in self.list_of_books:
@@ -59,13 +47,10 @@ class Library:
     def search_book(self, word):
         for book in self.list_of_books:
             if word in book:
-                return book
+                return True
             else:
-                return 
-                
-    def add_user(self, user: User):
-        self.list_of_users.append(user)
-
+                return False
+   
     def print_lib(self):
         for book in self.list_of_books:
             print(book)
