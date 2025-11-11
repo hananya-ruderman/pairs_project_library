@@ -25,3 +25,5 @@ class User:
 
     def __str__(self):
         return f"user: {self.name} id: {self.id} borrowed books: {self.borrowed_books}"
+    def __repr__(self):
+        return f"user: {self.name} id: {self.id} borrowed books: {self.borrowed_books}"

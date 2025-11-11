@@ -2,12 +2,14 @@ from core.books import Book
 from core.user import User
 from core.library import Library
 from core.user import User
+import json
 
 
 class Main:
     ISBN = 0
+    library = Library() 
     def start_lib_flow():
-        library = Library() 
+        
         library_opan = True
         while library_opan:
 
@@ -23,28 +25,43 @@ class Main:
                 new_user = input("enter your name:  ")
                 new_user_id = input("enter your id:  ")
                 user =  User(new_user, new_user_id)
-                library.add_user(user)
+                Main.library.add_book(user)
+                print("congrotulations!!! you are a library member")
             
             if choice == "2":
                 new_book = input("enter the book name:  ")
                 new_book_author = input("enter the book author:  ")
                 Main.ISBN += 1
                 book =  Book(new_book, new_book_author, Main.ISBN)
-                library.add_book(book)
+                Main.library.add_book(book)
+                print(book)
+                Main.write_to_file(book)
+               
+                print(Main.library.list_of_books)
+                
+                print("your donation eccepted. thank you")
             
             if choice == "3":
                 user_name = input("enter your name:  ")
                 book_borrowed = input("enter the book name or author:  ")
-                book_ready = library.search_book(book_borrowed)
-                library.borrow_book(book_ready[1], user_name)
+                book_ready = Main.library.search_book(book_borrowed)
+                Main.library.borrow_book(book_ready[1], user_name)
                 
             if choice == "4":
                 user_name = input("enter your name:  ")
                 returned_book = input("enter the book name or author:  ")
-                book_found = library.search_book(returned_book)
-                library.borrow_book(book_found[1], user_name)
+                book_found = Main.library.search_book(returned_book)
+                Main.library.borrow_book(book_found[1], user_name)
+            
             if choice == "5":
                 library_opan = False
+
+    def write_to_file(book):
+        with open("library_data.json", "a") as f:
+            data = json.dump(book, f, default=str)
+        print(data)
+
+        
 
             
 
@@ -53,30 +70,10 @@ class Main:
 
 if __name__ == "__main__":
     # main - Main()
-    Main.start_lib_flow()
-  
-    # users = User()
-
-   
-   
-    # print(type(book_1))
-   
-    # library.add_user(user_1)
-    # book_1.is_available = True
-    # book_2.is_available = True
-    # book_3.is_available = False
+    # Main.start_lib_flow()
+    # l = Library()
+    # print(l.list_of_books)
+    # print(l.list_of_users)
+    print(Main.write_to_file("fgjh"))
     
-
-    # library.add_book(book_1)
-    # library.add_book(book_2)
-    # library.add_book(book_3)
-    # # print(library.list_available_books())
-    # # library.print_lib()
-    # # library.borrow_book(book_1, user_1 )
-    # # library.return_book(book_1, user_1)
-    # a = [(1,2), (3,4)]
-    # print(library.search_book("2"))
-    # # print(library.list_of_books)
-    # my_list = library.list_of_books
-    # # my_dict = dict(my_list)
-    # # print(my_dict)
+   

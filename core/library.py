@@ -2,6 +2,7 @@
 from core.books import Book
 from core.user import User
 
+
 class Library:
     def __init__(self):
         self.list_of_books = []
@@ -9,10 +10,12 @@ class Library:
         
     def add_book(self, book: Book):
         self.list_of_books.append(book)
+      
         
     def add_user(self, user: User):
         self.list_of_users.append(user)
-
+       
+        
     def borrow_book(self, book: Book, user: User):
         if self.search_book(book):
             if book.is_available:
@@ -46,10 +49,12 @@ class Library:
     
     def search_book(self, word):
         for book in self.list_of_books:
+            # book  = str(book)
             
-            if word in str(book):
-                return True, book
-        return False
+            if word in book:
+                
+                book
+        return word
    
     def print_lib(self):
         for book in self.list_of_books:
@@ -57,3 +62,4 @@ class Library:
         
     def __str__(self):
         return f"the list of books is {self.list_of_books}"
+ 
