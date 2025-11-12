@@ -35,7 +35,7 @@ class Main:
                 book =  Book(new_book, new_book_author, Main.ISBN)
                 Main.library.add_book(book)
                 print(book)
-                Main.write_to_file(book)
+                Main.write_to_file(book.__dict__)
                
                 print(Main.library.list_of_books)
                 
@@ -58,8 +58,9 @@ class Main:
 
     def write_to_file(book):
         with open("library_data.json", "a") as f:
-            data = json.dump(book, f, default=str)
-        print(data)
+            json.dump(book, f)
+            
+        
 
         
 
@@ -69,11 +70,10 @@ class Main:
 
 
 if __name__ == "__main__":
-    # main - Main()
-    # Main.start_lib_flow()
+    main = Main()
+    Main.start_lib_flow()
     # l = Library()
     # print(l.list_of_books)
     # print(l.list_of_users)
-    print(Main.write_to_file("fgjh"))
+
     
-   
